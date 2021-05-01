@@ -13,22 +13,22 @@ CREATE TABLE bitcoin (
 );
 
 CREATE TABLE litecoin (
-	index SERIAL,
+	index SERIAL PRIMARY KEY,
 	name VARCHAR NOT NULL,
 	high DECIMAL,
 	low DECIMAL,
 	open DECIMAL,
 	close DECIMAL,
-	date VARCHAR NOT NULL PRIMARY KEY 
+	date VARCHAR NOT NULL,
 	FOREIGN KEY (date) REFERENCES bitcoin (date)
 );
 
 CREATE TABLE tesla (
-	index SERIAL,
+	index SERIAL PRIMARY KEY,
 	high DECIMAL,
 	low DECIMAL,
 	open DECIMAL,
 	close DECIMAL,
-	date VARCHAR NOT NULL PRIMARY KEY 
+	date VARCHAR NOT NULL,
 	FOREIGN KEY (date) REFERENCES bitcoin (date)
 );
